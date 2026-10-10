@@ -4,9 +4,9 @@ Application de bureau hors connexion pour progresser en français et préparer l
 
 ## Installer et lancer
 
-Sur Windows, lancez `Le-Defi-Francais-Setup-1.1.0.exe` et suivez l’assistant d’installation. La version 1.1.0 est construite avec `npm run package:windows` et apparaît dans `dist/`. Le fichier créé localement n’est pas publié dans ce dépôt.
+Sur Windows, téléchargez `Le-Defi-Francais-Setup-1.1.0.exe` depuis [Releases](https://github.com/fahchouchsm/Le-Defi-Francais/releases) et suivez l’assistant d’installation. Cette version publique inclut les exercices originaux, mais pas les PDF/MP3 TV5MONDE. La version 1.1.0 est construite avec `npm run package:windows` et apparaît dans `dist/`.
 
-Depuis le code source : `npm ci`, puis `npm run build:css`, puis `npx electron .`. Les PDF/MP3 TV5MONDE ne sont **pas** dans le dépôt public : téléchargez-les depuis [la page officielle des livrets TCF](https://apprendre.tv5monde.com/fr/article/les-livrets-dentrainement-au-tcf-r-avec-tv5monde) et placez-les dans `tcf-offline/` avec les noms indiqués dans `tcf-data.js` si vous souhaitez utiliser le test blanc local. Ils ne doivent pas être redistribués sans autorisation. Les 300 questions originales, les leçons et les ateliers fonctionnent sans ces fichiers.
+Depuis le code source : `npm ci`, puis `npm run build:css`, puis `npx electron .`. Les PDF/MP3 TV5MONDE ne sont **pas** dans le dépôt ni dans les installateurs publics : téléchargez-les depuis [la page officielle des livrets TCF](https://apprendre.tv5monde.com/fr/article/les-livrets-dentrainement-au-tcf-r-avec-tv5monde) et placez-les dans `tcf-offline/` avec les noms indiqués dans `tcf-data.js` si vous souhaitez utiliser le test blanc local depuis le code source. Ils ne doivent pas être redistribués sans autorisation. Les 300 questions originales, les leçons et les ateliers fonctionnent sans ces fichiers.
 
 ## Parcours principal
 

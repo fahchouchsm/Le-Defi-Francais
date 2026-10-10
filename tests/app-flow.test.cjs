@@ -419,6 +419,8 @@ test('release builds a Windows installer and keeps third-party media out of the 
   assert.match(ignore, /tcf-offline\/\*\.mp3/);
   assert.match(ignore, /dist\//);
   assert.match(ignore, /node_modules\//);
+  assert.ok(config.build.files.includes('!tcf-offline/*.pdf'));
+  assert.ok(config.build.files.includes('!tcf-offline/*.mp3'));
 });
 
 test('home opens without a question; practice collapses the menu and hides other pages', () => {

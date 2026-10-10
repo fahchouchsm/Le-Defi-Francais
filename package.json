@@ -19,7 +19,9 @@
       "!tests/**",
       "!dist/**",
       "!node_modules/**",
-      "!README.md"
+      "!README.md",
+      "!tcf-offline/*.pdf",
+      "!tcf-offline/*.mp3"
     ],
     "directories": {
       "buildResources": "build",
