@@ -1,0 +1,5 @@
+;!@Install@!UTF-8!
+Title="Le Défi Français"
+RunProgram="Le Défi Français.exe"
+GUIMode="2"
+;!@InstallEnd@!

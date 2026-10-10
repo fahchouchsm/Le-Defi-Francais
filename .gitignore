@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+tcf-offline/*.pdf
+tcf-offline/*.mp3
+Le-Defi-Francais.desktop

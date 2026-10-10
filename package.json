@@ -1,0 +1,51 @@
+{
+  "name": "le-defi-francais",
+  "version": "1.1.0",
+  "description": "French practice desktop app",
+  "main": "main.cjs",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./theme.tailwind.css -o ./theme.css --minify",
+    "pretest": "npm run build:css",
+    "test": "node tests/app-flow.test.cjs && node tests/quiz-engine.test.js",
+    "package:windows": "npm run build:css && electron-builder --win nsis",
+    "package:windows:portable": "npm run build:css && electron-builder --win portable"
+  },
+  "build": {
+    "appId": "fr.ledefifrancais.app",
+    "productName": "Le Défi Français",
+    "files": [
+      "**/*",
+      "!tests/**",
+      "!dist/**",
+      "!node_modules/**",
+      "!README.md"
+    ],
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    },
+    "win": {
+      "signAndEditExecutable": false,
+      "target": [
+        "nsis"
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "artifactName": "Le-Defi-Francais-Setup-${version}.exe"
+    },
+    "portable": {
+      "artifactName": "Le-Defi-Francais-Windows-${version}.exe"
+    }
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "electron": "39.2.7",
+    "electron-builder": "26.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}

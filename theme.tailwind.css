@@ -1,0 +1,444 @@
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+:root { --surface: #fffefa; }
+:root[data-theme=dark] {
+  color-scheme: dark;
+  --paper: #0b0b0d;
+  --surface: #1b1b1f;
+  --ink: #f4f1eb;
+  --muted: #aaa9af;
+  --line: #39393f;
+  --green: #e2b66f;
+}
+
+[data-theme=dark] .navigation { @apply bg-[#121214] border-[#39393f] shadow-none; }
+[data-theme=dark] .navigation .nav-link { @apply text-[#aaa9af]; }
+[data-theme=dark] .navigation .nav-link:hover,
+[data-theme=dark] .navigation .nav-link[aria-current=page],
+[data-theme=dark] .navigation-toggle,
+[data-theme=dark] .theme-toggle { @apply bg-[#29292e] border-[#49494f] text-[#f4f1eb] shadow-none; }
+[data-theme=dark] .location-bar,
+[data-theme=dark] #location-current,
+[data-theme=dark] .location-bar button { @apply text-[#cbc8c2]; }
+
+[data-theme=dark] .brand-icon,
+[data-theme=dark] .primary,
+[data-theme=dark] .tcf-play,
+[data-theme=dark] .path-stages li:last-child button,
+[data-theme=dark] .lesson-steps [aria-pressed=true],
+[data-theme=dark] .lesson-page .lesson-steps [aria-pressed=true] { @apply bg-[#e2b66f] border-[#e2b66f] text-[#211a10]; }
+[data-theme=dark] .primary:hover,
+[data-theme=dark] .tcf-play:hover { @apply bg-[#f1cc91]; }
+
+[data-theme=dark] .start-card { @apply bg-[#202024] bg-none border-[#39393f] shadow-none; }
+[data-theme=dark] .topic-card,
+[data-theme=dark] .focus-card,
+[data-theme=dark] .choice,
+[data-theme=dark] .entry,
+[data-theme=dark] .stats-grid>div,
+[data-theme=dark] .guided-path,
+[data-theme=dark] .course-card,
+[data-theme=dark] .scene-panel,
+[data-theme=dark] .construction-panel,
+[data-theme=dark] .comparison-panel,
+[data-theme=dark] .lesson-content,
+[data-theme=dark] .lesson-content>:first-child,
+[data-theme=dark] .writing-workspace aside,
+[data-theme=dark] #writing-comparison>details,
+[data-theme=dark] .lesson-page .lesson-steps button,
+[data-theme=dark] .forms-grid .colored-form,
+[data-theme=dark] .tcf-module,
+[data-theme=dark] .tcf-real-card,
+[data-theme=dark] .tcf-library,
+[data-theme=dark] .tcf-question,
+[data-theme=dark] .tcf-option,
+[data-theme=dark] .tcf-production-grid>div,
+[data-theme=dark] .tcf-production-grid aside { @apply bg-[#1b1b1f] border-[#39393f] text-[#f4f1eb]; }
+[data-theme=dark] .topic-card:hover,
+[data-theme=dark] .choice:hover:not(:disabled),
+[data-theme=dark] .course-card:hover,
+[data-theme=dark] .tcf-option:hover:not(:disabled),
+[data-theme=dark] .tcf-module:hover,
+[data-theme=dark] .tcf-real-card:hover { @apply bg-[#29292e] border-[#82715a]; }
+[data-theme=dark] .topic-icon,
+[data-theme=dark] .topic-card:nth-child(2) .topic-icon,
+[data-theme=dark] .topic-card:nth-child(3) .topic-icon { @apply bg-[#303034] text-[#e2b66f]; }
+[data-theme=dark] .topic-arrow,
+[data-theme=dark] .empty-state>span { @apply text-[#e2b66f]; }
+
+[data-theme=dark] .answer-area,
+[data-theme=dark] .scene-panel,
+[data-theme=dark] .forms-grid li,
+[data-theme=dark] .practice-invitation,
+[data-theme=dark] .writer-brief,
+[data-theme=dark] .resume-work,
+[data-theme=dark] .tcf-home-link,
+[data-theme=dark] .tcf-hero,
+[data-theme=dark] .tcf-production,
+[data-theme=dark] .tcf-stimulus,
+[data-theme=dark] .tcf-self-check,
+[data-theme=dark] .tcf-message,
+[data-theme=dark] .tcf-feedback,
+[data-theme=dark] .tense-formula { @apply bg-[#242428] border-[#414148] text-[#f4f1eb]; }
+[data-theme=dark] .topic-section,
+[data-theme=dark] .session-facts { @apply border-[#414148]; }
+[data-theme=dark] .lesson-content>:last-child:not(:first-child),
+[data-theme=dark] .path-stages button { @apply bg-[#242428] border-[#414148] text-[#f4f1eb]; }
+[data-theme=dark] .path-stages button:hover,
+[data-theme=dark] .tcf-home-link:hover { @apply bg-[#303036]; }
+
+[data-theme=dark] .eyebrow,
+[data-theme=dark] .small-note,
+[data-theme=dark] .pill,
+[data-theme=dark] .keyboard-hint,
+[data-theme=dark] .rule,
+[data-theme=dark] .model-note,
+[data-theme=dark] .lesson-content p,
+[data-theme=dark] .scene-context,
+[data-theme=dark] .form-subject,
+[data-theme=dark] .lesson-content .form-legend,
+[data-theme=dark] .course-card span,
+[data-theme=dark] .guided-path>p,
+[data-theme=dark] .tcf-module>span:nth-last-child(2),
+[data-theme=dark] .tcf-production p:not(.eyebrow),
+[data-theme=dark] .start-card p,
+[data-theme=dark] .session-facts span,
+[data-theme=dark] .topic-card>span:not(.topic-icon):not(.topic-arrow) { @apply text-[#aaa9af]; }
+[data-theme=dark] .pill,
+[data-theme=dark] .choice-number,
+[data-theme=dark] kbd { @apply border-[#54545a]; }
+
+[data-theme=dark] .answer-area.mistake,
+[data-theme=dark] .choice.incorrect,
+[data-theme=dark] .tcf-option.incorrect { @apply bg-[#372322] border-[#aa665e] text-[#fff0eb]; }
+[data-theme=dark] .choice.correct,
+[data-theme=dark] .tcf-option.correct { @apply bg-[#1d3444] border-[#5c94b3] text-[#eef8ff]; }
+[data-theme=dark] .choice.correct .choice-number { @apply bg-[#5c94b3] border-[#5c94b3] text-[#101c24]; }
+[data-theme=dark] .scene-action,
+[data-theme=dark] .lesson-explanation h2,
+[data-theme=dark] .form-stem,
+[data-theme=dark] .form-participle { @apply text-[#e2b66f]; }
+[data-theme=dark] .form-ending { @apply text-[#efbd88]; }
+[data-theme=dark] .form-auxiliary { @apply text-[#c8acf0]; }
+
+[data-theme=dark] textarea,
+[data-theme=dark] .writing-paper textarea { @apply bg-[#151518] border-[#505057] text-[#f4f1eb]; }
+[data-theme=dark] .writing-paper textarea { background: repeating-linear-gradient(#151518 0px, #151518 29px, #36363d 30px); }
+[data-theme=dark] .tcf-hero-mark { @apply bg-[#151518] border-[#82715a]; box-shadow: 12px 12px 0 #34343a; }
+[data-theme=dark] .storage-notice { @apply bg-[#433322] border-[#a28454] text-[#fff1d7]; }
+[data-theme=dark] .danger-button { @apply border-[#a26c5c] text-[#f5ad98]; }
+
+@media(max-width:950px) { .navigation nav { grid-template-columns: repeat(7, minmax(0, 1fr)); } }
+@media(max-width:600px) {
+  .navigation nav { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .navigation .nav-link { white-space: normal; }
+  .theme-toggle { margin-left: auto; }
+}
+
+/* A quieter study shell: a single content column and fewer competing surfaces. */
+:root:not([data-theme=dark]) { --paper:#f7f6f2; --surface:#fffefa; --ink:#252b29; --muted:#5e6863; --line:#d8ddd7; }
+body { line-height:1.5; }
+.navigation { min-height:68px; padding-block:10px; border-bottom:1px solid var(--line); box-shadow:none; }
+.navigation .nav-link { min-height:40px; padding:8px 11px; }
+.navigation .nav-link[aria-current=page] { box-shadow:none; }
+.location-bar { padding-top:13px; }
+.page { padding-top:36px; }
+.small-note { font-size:12px; line-height:1.55; color:var(--muted); }
+.eyebrow { font-size:11px; }
+.intro { max-width:62ch; }
+.home-page { gap:42px 56px; padding-top:50px; }
+.start-card { background:var(--surface); border:1px solid var(--line); box-shadow:none; }
+.topic-section { padding-top:30px; }
+.topic-card,.tcf-module,.tcf-real-card,.course-card,.guided-path { box-shadow:none; }
+.topic-card:hover,.tcf-module:hover,.tcf-real-card:hover { transform:none; box-shadow:none; }
+.focus-card { max-width:760px; margin-top:28px; box-shadow:none; }
+.question-area h1 { max-width:25ch; }
+.lesson-content p,.writing-workspace aside p,.entry p { max-width:68ch; }
+.writing-paper textarea { background:var(--surface); }
+body:has(#tcf-offline-exam:not([hidden])) .navigation { min-height:56px; }
+body:has(#tcf-offline-exam:not([hidden])) .navigation nav,
+body:has(#tcf-offline-exam:not([hidden])) .location-bar { display:none!important; }
+body:has(#tcf-offline-exam:not([hidden])) .tcf-page { padding-top:24px; }
+body:has(#tcf-offline-exam:not([hidden])) #tcf-overview { padding-top:0; }
+body:has(#tcf-offline-exam:not([hidden])) .navigation .brand { font-size:16px; }
+
+/* Guided sections: three teach-and-practice levels, then one mastery challenge. */
+.levels-page { max-width:1030px; }
+.levels-heading { max-width:760px; margin:27px 0 32px; }
+.levels-heading h1 { margin:10px 0 15px; }
+.levels-heading .intro { font-size:15px; line-height:1.7; }
+.levels-progress-wrap { display:flex; align-items:center; gap:18px; margin-top:23px; color:var(--muted); font-size:12px; font-weight:700; }
+.levels-progress-wrap progress { max-width:290px; height:7px; }
+.levels-list { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+.level-card { display:flex; flex-direction:column; align-items:flex-start; min-width:0; padding:27px; border:1px solid var(--line); border-radius:14px; background:var(--surface); }
+.level-card h2 { margin:13px 0 11px; font:clamp(23px,2.5vw,29px)/1.15 var(--serif); }
+.level-card .level-teach { max-width:55ch; font-size:13px; line-height:1.7; color:var(--ink); }
+.level-card .level-example { margin:17px 0; padding:12px 15px; border-left:2px solid var(--green); background:color-mix(in srgb,var(--green) 5%,var(--surface)); color:var(--muted); font-size:12px; line-height:1.65; }
+.level-status { display:block; margin:auto 0 13px; font-size:11px; font-weight:700; color:var(--muted); }
+.level-card .primary,.level-locked { min-height:42px; padding:10px 16px; font-size:12px; }
+.level-locked { border:1px solid var(--line); border-radius:8px; background:transparent; color:var(--muted); }
+.level-boss { grid-column:1/-1; border-color:#d1af72; background:#f7f0e3; }
+.level-boss .eyebrow,.level-boss .level-status { color:#8c6428; }
+.level-boss .level-example { background:color-mix(in srgb,#d1af72 12%,var(--surface)); }
+.levels-footnote { display:block; margin-top:20px; }
+.practice-page[data-challenge=boss] .focus-card { border-color:#b18a4c; }
+.practice-page[data-challenge=boss] #level { color:#a57431; }
+[data-theme=dark] .practice-page[data-challenge=boss] #level { color:#e2b66f; }
+[data-theme=dark] .level-boss { background:#242018; border-color:#8c7041; }
+[data-theme=dark] .level-boss .eyebrow,[data-theme=dark] .level-boss .level-status { color:#e2b66f; }
+[data-theme=dark] .level-card .level-teach { color:var(--ink); }
+@media(max-width:850px) { .levels-list { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:600px) {
+  .navigation { position:static; }
+  .navigation nav { display:flex; flex-wrap:nowrap; overflow-x:auto; justify-content:flex-start; scrollbar-width:thin; }
+  .navigation .nav-link { flex:none; min-height:42px; padding:8px 10px; white-space:nowrap; }
+  .navigation .nav-link .ui-icon { display:none; }
+  .home-page { padding-top:27px; }
+  .topic-section { padding-top:25px; }
+  body:has(#tcf-offline-exam:not([hidden])) .navigation { flex-wrap:nowrap; }
+  body:has(#tcf-offline-exam:not([hidden])) .theme-toggle { margin-left:auto; }
+  .levels-heading { margin:20px 0 25px; }
+  .levels-heading .intro { font-size:14px; }
+  .levels-list { grid-template-columns:1fr; gap:12px; }
+  .level-boss { grid-column:auto; }
+  .level-card { padding:22px; }
+  .levels-progress-wrap { display:block; }
+  .levels-progress-wrap progress { margin-top:9px; }
+}
+
+/* Focused mission + compact four-chapter map. */
+.home-page { display:block; max-width:1100px; padding-top:42px; }
+.journey-hero { display:grid; grid-template-columns:minmax(0,1fr) 230px; align-items:stretch; gap:15px; }
+.journey-feature { min-width:0; padding:27px 32px 32px; border:1px solid #31343b; border-radius:20px; background:radial-gradient(circle at 15% 60%,#33302b 0%,#23252b 38%,#202228 75%); color:#f8f4eb; }
+.journey-feature-top { display:flex; justify-content:space-between; gap:16px; align-items:center; }
+.journey-feature .eyebrow { color:#dfb872; }
+.journey-feature-chapter { color:#c5c2bb; font-size:11px; }
+.journey-feature-body { display:grid; grid-template-columns:120px minmax(0,1fr); align-items:start; gap:18px; margin-top:27px; }
+.journey-feature-number { font:112px/.82 var(--serif); letter-spacing:-.09em; color:#e4b96c; }
+.journey-feature h1 { max-width:15ch; margin:6px 0 13px; font-size:clamp(32px,3.5vw,49px); line-height:1.04; }
+.journey-teach { max-width:52ch; color:#e5e1d8; font-size:13px; line-height:1.65; }
+.journey-example { margin-top:10px; color:#b9b5ac; font-size:12px; line-height:1.55; }
+.journey-context { margin-top:7px; }
+.journey-context .text-button { color:#e4b96c; font-size:12px; }
+.journey-feature .primary { min-height:48px; margin-top:17px; background:#e4b96c; border-color:#e4b96c; color:#241f19; }
+.journey-feature .primary:hover { background:#f0cb8b; }
+.journey-progress-card { display:flex; flex-direction:column; justify-content:space-between; align-items:center; gap:15px; padding:23px; border:1px solid var(--line); border-radius:18px; background:var(--surface); text-align:center; }
+.journey-progress-ring { display:grid; place-items:center; width:165px; aspect-ratio:1; border-radius:50%; background:conic-gradient(#d4a45c var(--journey-sweep),#e4e7e1 0); }
+.journey-progress-ring::before { content:''; grid-area:1/1; width:137px; aspect-ratio:1; border-radius:50%; background:var(--surface); }
+.journey-progress-card strong { z-index:1; grid-area:1/1; font:32px/1 var(--serif); letter-spacing:-.06em; }
+.journey-progress-card progress { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+.journey-progress-card span:last-child { color:var(--muted); font-size:11px; }
+.journey-intro { display:flex; justify-content:space-between; align-items:end; gap:20px; margin:40px 0 11px; }
+.journey-intro h2,.journey-tools h2 { margin-top:4px; font:27px/1.15 var(--serif); }
+.journey-intro>p { color:var(--muted); font-size:11px; }
+.journey-list { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px 14px; }
+.journey-card { position:relative; display:flex; flex-direction:column; min-width:0; margin-top:19px; }
+.journey-card:nth-child(-n+4) { grid-row:1; }
+.journey-card:nth-child(n+5):nth-child(-n+8) { grid-row:2; }
+.journey-card:nth-child(n+9):nth-child(-n+12) { grid-row:3; }
+.journey-card:nth-child(n+13) { grid-row:4; }
+.journey-card:nth-child(8n+1) { grid-column:1; }
+.journey-card:nth-child(8n+2) { grid-column:2; }
+.journey-card:nth-child(8n+3) { grid-column:3; }
+.journey-card:nth-child(8n+4) { grid-column:4; }
+.journey-card:nth-child(8n+5) { grid-column:4; }
+.journey-card:nth-child(8n+6) { grid-column:3; }
+.journey-card:nth-child(8n+7) { grid-column:2; }
+.journey-card:nth-child(8n+8) { grid-column:1; }
+.journey-card:not(:nth-child(4n))::after { content:''; position:absolute; z-index:-1; top:89px; right:-14px; width:14px; height:3px; background:#c8ad7e; }
+.journey-card:nth-child(8n+5)::after,.journey-card:nth-child(8n+6)::after,.journey-card:nth-child(8n+7)::after { right:auto; left:-14px; }
+.journey-card:nth-child(4n)::before { content:''; position:absolute; z-index:-1; width:3px; height:27px; left:50%; bottom:-31px; background:#c8ad7e; }
+.journey-card:nth-child(16)::before { display:none; }
+.journey-chapter { min-height:20px; margin-bottom:5px; color:var(--muted); font-size:10px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; white-space:nowrap; }
+.journey-card:not(:nth-child(4n+1)) { padding-top:25px; }
+.journey-node { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; width:100%; min-height:128px; padding:13px 8px; border:1px solid var(--line); border-radius:14px; background:var(--surface); color:var(--ink); text-align:center; transition:transform .15s,border-color .15s,background .15s; }
+.journey-node:not(:disabled):hover { transform:translateY(-3px); border-color:#bd9555; }
+.journey-node:focus-visible { outline:3px solid #d4a45c; outline-offset:3px; }
+.journey-node-mark { display:grid; place-items:center; width:59px; height:59px; border:2px solid #d5d9d4; border-radius:50%; background:#f3f3ef; color:#868c86; font:26px/1 var(--serif); }
+.journey-node-title { max-width:15ch; font-size:12px; font-weight:650; line-height:1.3; }
+.journey-current .journey-node { border-color:#bd9555; background:#fff9ed; box-shadow:0 0 0 2px #d4a45c22; }
+.journey-current .journey-node-mark { background:#e4b96c; border-color:#e4b96c; color:#241f19; }
+.journey-boss .journey-node-mark { border-color:#caa56a; background:#f5e9d2; color:#9c6b24; }
+.journey-locked .journey-node { color:var(--muted); }
+.journey-card:has(.journey-node[aria-label*="réussi"]) .journey-node-mark { border-color:#738779; background:#dce8dc; color:#324938; }
+.journey-destination { display:flex; flex-direction:column; align-items:center; margin-top:8px; }
+.journey-destination-line { width:3px; height:26px; background:#c8ad7e; }
+.journey-destination button { display:flex; align-items:center; gap:20px; width:100%; max-width:560px; min-height:106px; padding:18px 24px; border:1px solid #c8ad7e; border-radius:15px; background:#f7efdf; text-align:left; }
+.journey-destination button:not(:disabled):hover { background:#f1e3c8; }
+.journey-destination button:disabled { cursor:default; }
+.journey-destination-icon { display:grid; place-items:center; width:59px; height:59px; flex:none; border-radius:50%; background:#e4b96c; color:#28231c; font-size:27px; }
+.journey-destination button>span:last-child { display:grid; gap:4px; }
+.journey-destination strong { font:23px/1.2 var(--serif); }
+.journey-destination small,.journey-destination em { color:var(--muted); font-size:11px; font-style:normal; }
+.journey-destination em { color:#8f662d; font-weight:700; }
+.journey-tools { margin-top:43px; padding-top:22px; border-top:1px solid var(--line); }
+.journey-tool-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:9px; margin-top:15px; }
+.journey-tool-grid button { display:flex; align-items:center; gap:10px; min-height:56px; padding:11px 13px; border:1px solid var(--line); border-radius:10px; background:var(--surface); text-align:left; font-size:12px; font-weight:650; }
+.journey-tool-grid button:hover { border-color:#bd9555; }
+.journey-tool-grid button span { color:#b88740; font:22px/1 var(--serif); }
+.legacy-library { margin-top:26px; padding-top:19px; border-top:1px solid var(--line); }
+.legacy-library>summary { cursor:pointer; color:var(--muted); font-size:12px; }
+.legacy-home { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start; padding-top:30px; }
+.legacy-home .topic-section { grid-column:1/-1; }
+.legacy-home .home-heading h2 { margin:0 0 20px; font:38px/1.1 var(--serif); }
+[data-theme=dark] .journey-feature { background:radial-gradient(circle at 15% 60%,#302b25 0%,#202126 42%,#1b1b1f 80%); border-color:#45444a; }
+[data-theme=dark] .journey-progress-card,[data-theme=dark] .journey-node,[data-theme=dark] .journey-tool-grid button { @apply bg-[#1b1b1f] border-[#39393f] text-[#f4f1eb]; }
+[data-theme=dark] .journey-progress-ring { background:conic-gradient(#e2b66f var(--journey-sweep),#34343a 0); }
+[data-theme=dark] .journey-node-mark { @apply bg-[#25252a] border-[#505057] text-[#aaa9af]; }
+[data-theme=dark] .journey-current .journey-node { @apply bg-[#2b271f] border-[#c69854]; }
+[data-theme=dark] .journey-current .journey-node-mark { @apply bg-[#e2b66f] border-[#e2b66f] text-[#211a10]; }
+[data-theme=dark] .journey-boss .journey-node-mark { @apply bg-[#352b1d] border-[#9e7843] text-[#e2b66f]; }
+[data-theme=dark] .journey-card:has(.journey-node[aria-label*="réussi"]) .journey-node-mark { @apply bg-[#29342c] border-[#687f6a] text-[#b9d5b9]; }
+[data-theme=dark] .journey-destination button { @apply bg-[#242018] border-[#8c7041] text-[#f4f1eb]; }
+[data-theme=dark] .journey-destination button:not(:disabled):hover { @apply bg-[#30291e]; }
+[data-theme=dark] .journey-destination em { @apply text-[#e2b66f]; }
+@media(max-width:800px) {
+  .journey-hero { grid-template-columns:1fr; }
+  .journey-progress-card { flex-direction:row; justify-content:space-around; min-height:100px; }
+  .journey-progress-ring { width:72px; }
+  .journey-progress-ring::before { width:60px; }
+  .journey-progress-card strong { font-size:16px; }
+  .journey-tool-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+}
+@media(max-width:600px) {
+  .navigation { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:6px 10px; min-height:0; padding:9px 15px; }
+  .navigation .brand { grid-column:1; grid-row:1; }
+  .navigation .theme-toggle { grid-column:2; grid-row:1; margin:0; padding:8px 9px; font-size:11px; }
+  .navigation nav { grid-column:1/-1; grid-row:2; flex-basis:auto; }
+  .navigation .navigation-toggle { grid-column:2; grid-row:2; }
+  .home-page { padding-top:24px; }
+  .journey-feature { padding:18px; }
+  .journey-feature-body { grid-template-columns:64px minmax(0,1fr); gap:8px; margin-top:18px; }
+  .journey-feature-number { font-size:66px; }
+  .journey-feature h1 { font-size:30px; }
+  .journey-feature .primary { margin-top:12px; }
+  .journey-feature-chapter { text-align:right; }
+  .journey-progress-card { min-height:82px; padding:11px 16px; }
+  .journey-progress-ring { width:62px; }
+  .journey-progress-ring::before { width:52px; }
+  .journey-intro { display:block; margin-top:24px; }
+  .journey-intro>p { margin-top:9px; }
+  #journey-list { grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px 10px; }
+  #journey-list .journey-card { grid-row:auto; grid-column:auto; }
+  .journey-card::before,.journey-card::after { display:none; }
+  .journey-card { margin-top:13px; }
+  .journey-card:nth-child(odd) { padding-top:0; }
+  .journey-card:nth-child(even) { padding-top:25px; }
+  .journey-node { min-height:112px; }
+  .journey-node-mark { width:50px; height:50px; font-size:22px; }
+  .journey-tool-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .legacy-home { grid-template-columns:1fr; }
+  .legacy-home .topic-section { grid-column:auto; }
+}
+
+/* A connected, always-visible route. Every stop remains legible when locked. */
+.journey-list { gap:21px 12px; padding:17px 14px 12px; border:1px solid var(--line); border-radius:22px; background:color-mix(in srgb,var(--surface) 72%,var(--paper)); overflow:hidden; }
+.journey-card { min-height:168px; margin-top:0; padding-top:29px; }
+.journey-card:nth-child(n+13):nth-child(-n+16) { grid-row:4; }
+.journey-card:nth-child(n+17):nth-child(-n+20) { grid-row:5; }
+.journey-card:nth-child(n+21):nth-child(-n+24) { grid-row:6; }
+.journey-card:not(:nth-child(4n+1)) { padding-top:29px; }
+.journey-chapter { position:absolute; top:0; left:8px; z-index:2; width:max-content; max-width:calc(400% + 36px); min-height:22px; padding:3px 10px; border-radius:100px; background:var(--ink); color:var(--paper); font-size:10px; letter-spacing:.09em; }
+.journey-card::after,.journey-card::before { z-index:0; background:#c7ae85; }
+.journey-card:not(:nth-child(4n))::after { z-index:0; top:66px; left:50%; right:auto; width:calc(100% + 12px); height:3px; border-radius:3px; }
+.journey-card:nth-child(8n+5)::after,.journey-card:nth-child(8n+6)::after,.journey-card:nth-child(8n+7)::after { left:auto; right:50%; }
+.journey-card:nth-child(4n)::before { z-index:0; top:66px; bottom:auto; left:50%; width:37%; height:calc(100% + 21px); border:3px solid #c7ae85; border-left:0; border-radius:0 18px 18px 0; background:transparent; }
+.journey-card:nth-child(8n+8)::before { left:auto; right:50%; border:3px solid #c7ae85; border-right:0; border-radius:18px 0 0 18px; }
+.journey-card:nth-child(8n+5) .journey-chapter { left:auto; right:8px; }
+.journey-card:nth-child(16)::before { display:block; }
+.journey-card:nth-child(24)::before { display:none; }
+.journey-node { position:relative; z-index:1; justify-content:flex-start; gap:7px; min-height:140px; padding:0 10px 10px; border:1px solid transparent; border-radius:15px; background:transparent; box-shadow:none; }
+.journey-node:not(:disabled):hover { transform:translateY(-2px); border-color:#d4ba8e; background:color-mix(in srgb,#e9c889 12%,var(--surface)); }
+.journey-node:active:not(:disabled) { transform:translateY(0) scale(.98); }
+.journey-node-mark { width:74px; height:74px; flex:none; border:3px solid #bfc5be; background:var(--surface); color:#545d59; font:28px/1 var(--serif); box-shadow:0 3px 0 #c5c8c0,0 0 0 5px var(--surface); }
+.journey-node-title { max-width:19ch; font-size:13px; font-weight:750; line-height:1.23; }
+.journey-node-status { color:var(--muted); font-size:10px; font-weight:650; }
+.journey-current .journey-node { border-color:#c89b57; background:#fff8e9; box-shadow:0 5px 18px #8b611620; }
+.journey-current .journey-node-mark { box-shadow:0 3px 0 #b3833f,0 0 0 5px #fff8e9; }
+.journey-boss .journey-node-mark { width:78px; height:78px; border-color:#bd9050; background:#f2dfb8; color:#5f3d13; box-shadow:0 4px 0 #ab7a34,0 0 0 5px var(--surface); }
+.journey-boss .journey-node-title { color:#76521e; }
+.journey-passed .journey-node-mark { border-color:#6a8192; background:#dfeaf0; color:#23415a; }
+.journey-locked .journey-node { opacity:1; color:var(--ink); }
+.journey-locked .journey-node-status { color:#737977; }
+.journey-destination-line { height:34px; }
+.journey-context .text-button { background:#302d29; border-color:#9d8158; color:#f8ddb0; }
+.journey-context .text-button:hover { background:#473b2b; color:#fff0d4; }
+
+/* Consistent actions on the map, lessons, quizzes and TCF workspace. */
+:root { --action:#26272d; --action-hover:#41434c; --action-text:#fffaf0; --action-border:#b7bbb8; --action-soft:#fffdfa; --action-focus:#ca9242; }
+:root[data-theme=dark] { --action:#e2b66f; --action-hover:#f1cc91; --action-text:#211a10; --action-border:#5b5b63; --action-soft:#232328; --action-focus:#f1cc91; }
+button { transition:background-color .16s,border-color .16s,color .16s,box-shadow .16s,transform .16s; }
+button:focus-visible,summary:focus-visible,.tcf-exam-question label:has(input:focus-visible) { outline:3px solid var(--action-focus); outline-offset:3px; }
+.primary,.tcf-play { min-height:48px; padding:11px 19px; border:1px solid var(--action); border-radius:11px; background:var(--action); color:var(--action-text); font-size:13px; font-weight:750; line-height:1.25; box-shadow:0 3px 0 color-mix(in srgb,var(--action) 38%,transparent); }
+.primary:not(:disabled):hover,.tcf-play:not(:disabled):hover { background:var(--action-hover); border-color:var(--action-hover); color:var(--action-text); transform:translateY(-1px); }
+.primary:not(:disabled):active,.tcf-play:not(:disabled):active { transform:translateY(2px); box-shadow:none; }
+.text-button,.navigation-toggle,.danger-button { display:inline-flex; align-items:center; justify-content:center; min-height:42px; padding:9px 14px; border:1px solid var(--action-border); border-radius:10px; background:var(--action-soft); color:var(--ink); font-size:12px; font-weight:700; line-height:1.25; text-decoration:none; }
+.text-button:not(:disabled):hover,.navigation-toggle:not(:disabled):hover { border-color:var(--action-focus); background:color-mix(in srgb,var(--action-focus) 11%,var(--action-soft)); text-decoration:none; }
+.text-button:not(:disabled):active,.navigation-toggle:not(:disabled):active { transform:translateY(1px); }
+.danger-button { color:#9b4038; border-color:#c88b80; }
+.danger-button:hover { background:#fff0ee; }
+.navigation .nav-link { min-height:44px; border-radius:10px; color:var(--ink); }
+.navigation .nav-link:hover { border-color:var(--action-border); background:color-mix(in srgb,var(--action-focus) 10%,var(--surface)); }
+.navigation .nav-link[aria-current=page] { border-color:var(--action); background:var(--action); color:var(--action-text); box-shadow:none; }
+.theme-toggle { min-height:44px; border-radius:10px; }
+.choice,.tcf-option,.tcf-exam-question label { min-height:56px; border:1px solid var(--action-border); border-radius:11px; background:var(--surface); color:var(--ink); font-size:14px; font-weight:600; }
+.choice:not(:disabled):hover,.tcf-option:not(:disabled):hover,.tcf-exam-question label:hover { border-color:var(--action-focus); background:color-mix(in srgb,var(--action-focus) 9%,var(--surface)); box-shadow:0 0 0 2px color-mix(in srgb,var(--action-focus) 18%,transparent); }
+.choice.correct,.tcf-option.correct { border-color:#5886a2; background:#e7f1f7; color:#173b50; }
+.choice.incorrect,.tcf-option.incorrect { border-color:#b97063; background:#faeae5; color:#70352d; }
+.choice-number { border-color:var(--action-border); color:var(--ink); }
+.topic-card,.tcf-module,.tcf-real-card,.course-card,.journey-tool-grid button { border-radius:14px; }
+.topic-card:hover,.tcf-module:hover,.tcf-real-card:hover,.course-card:hover,.journey-tool-grid button:hover { border-color:var(--action-focus); box-shadow:0 5px 20px #59452c14; }
+.lesson-steps button,.path-stages button,.resume-work,.tcf-home-link { min-height:44px; border:1px solid var(--action-border); border-radius:11px; background:var(--action-soft); color:var(--ink); font-weight:700; }
+.lesson-steps button:hover,.path-stages button:hover,.resume-work:hover,.tcf-home-link:hover { border-color:var(--action-focus); background:color-mix(in srgb,var(--action-focus) 10%,var(--action-soft)); box-shadow:0 0 0 2px color-mix(in srgb,var(--action-focus) 15%,transparent); }
+.lesson-steps button[aria-pressed=true],.path-stages button[aria-current=step] { border-color:var(--action); background:var(--action); color:var(--action-text); }
+.journey-tool-grid button:active,.topic-card:active,.tcf-module:active,.course-card:active { transform:translateY(1px); box-shadow:none; }
+.journey-destination button { transition:background-color .16s,transform .16s,box-shadow .16s; }
+.journey-destination button:not(:disabled):hover { transform:translateY(-2px); box-shadow:0 8px 24px #8b611620; }
+.journey-destination button:not(:disabled):active { transform:translateY(1px); }
+.tcf-exam-jump-button { min-height:32px; border-radius:7px; }
+.tcf-exam-jump-button:hover { border-color:var(--action-focus); background:color-mix(in srgb,var(--action-focus) 10%,var(--surface)); }
+.tcf-exam-jump-button.current { border-color:var(--action-focus); box-shadow:0 0 0 1px var(--action-focus); }
+.tcf-exam-mobile-switch button[aria-pressed=true] { background:var(--action); color:var(--action-text); }
+button:disabled { cursor:not-allowed; box-shadow:none; }
+.primary:disabled,.text-button:disabled { opacity:.55; }
+[data-theme=dark] .journey-list { background:#141416; }
+[data-theme=dark] .journey-chapter { background:#e2b66f; color:#211a10; }
+[data-theme=dark] .journey-card::after { background:#806745; }
+[data-theme=dark] .journey-card::before { border-color:#806745; }
+[data-theme=dark] .journey-node { background:transparent; border-color:transparent; color:var(--ink); }
+[data-theme=dark] .journey-node:not(:disabled):hover { background:#29251f; border-color:#a78550; }
+[data-theme=dark] .journey-current .journey-node { background:#302719; border-color:#c69854; }
+[data-theme=dark] .journey-node-mark { background:#25252a; border-color:#77777c; color:#f4f1eb; box-shadow:0 3px 0 #49494e,0 0 0 5px #141416; }
+[data-theme=dark] .journey-current .journey-node-mark { background:#e2b66f; border-color:#e2b66f; color:#211a10; }
+[data-theme=dark] .journey-boss .journey-node-mark { background:#534023; border-color:#d7a95f; color:#ffdda1; }
+[data-theme=dark] .journey-boss .journey-node-title { color:#e2b66f; }
+[data-theme=dark] .journey-passed .journey-node-mark { background:#263f50; border-color:#6c9ebd; color:#dceffc; }
+[data-theme=dark] .journey-card:nth-child(4n)::before { border-color:#806745; }
+[data-theme=dark] .primary,[data-theme=dark] .tcf-play { background:var(--action); border-color:var(--action); color:var(--action-text); }
+[data-theme=dark] .primary:hover,[data-theme=dark] .tcf-play:hover { background:var(--action-hover); border-color:var(--action-hover); }
+[data-theme=dark] .text-button,[data-theme=dark] .navigation-toggle { background:var(--action-soft); border-color:var(--action-border); color:var(--ink); }
+[data-theme=dark] .navigation .nav-link[aria-current=page] { background:var(--action); border-color:var(--action); color:var(--action-text); }
+[data-theme=dark] .choice.correct,[data-theme=dark] .tcf-option.correct { background:#1d3444; border-color:#5c94b3; color:#eef8ff; }
+[data-theme=dark] .choice.incorrect,[data-theme=dark] .tcf-option.incorrect { background:#372322; border-color:#aa665e; color:#fff0eb; }
+@media(max-width:600px) {
+  #journey-list { gap:12px 4px; padding:14px 7px; }
+  #journey-list .journey-card { grid-row:var(--map-row); grid-column:var(--map-column); min-height:152px; padding-top:27px; }
+  .journey-chapter { left:2px; font-size:9px; }
+  .journey-card:nth-child(8n+5) .journey-chapter { left:2px; right:auto; }
+  .journey-node { min-height:128px; padding-inline:4px; }
+  .journey-node-mark,.journey-boss .journey-node-mark { width:60px; height:60px; font-size:22px; }
+  .journey-node-title { font-size:11px; }
+  .journey-card::before,.journey-card::after { display:none!important; }
+  .journey-card:nth-child(odd)::after { display:block!important; z-index:0; top:56px; left:50%; right:auto; width:calc(100% + 4px); height:3px; }
+  .journey-card:nth-child(4n+3)::after { left:auto; right:50%; }
+  .journey-card:nth-child(even)::before { content:''; display:block!important; z-index:0; top:56px; bottom:auto; left:50%; right:auto; width:37%; height:calc(100% + 12px); border:3px solid #c7ae85; border-left:0; border-radius:0 14px 14px 0; background:transparent; }
+  .journey-card:nth-child(4n)::before { left:auto; right:50%; border:3px solid #c7ae85; border-right:0; border-radius:14px 0 0 14px; }
+  .journey-card:nth-child(24)::before { display:none!important; }
+  .journey-list { background-image:none; }
+  .text-button { min-height:42px; }
+  .tcf-exam-step .primary,.answer-area .primary { min-height:46px; }
+}
+@media(prefers-reduced-motion:reduce) { button { transition:none!important; } }

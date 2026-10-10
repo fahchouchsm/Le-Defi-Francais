@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta id="browser-theme-color" name="theme-color" content="#f7f7f2">
+  <title>Le Défi Français</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="navigation.css">
+  <link rel="stylesheet" href="lesson-focus.css">
+  <link rel="stylesheet" href="tcf.css">
+  <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+  <header id="navigation" class="navigation">
+    <button id="brand-home" class="brand" aria-label="Le Défi Français — accueil"><span class="brand-icon">f.</span>Le Défi Français</button>
+    <nav id="navigation-links" aria-label="Navigation principale">
+      <button id="nav-home" class="nav-link" aria-current="page"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></svg>Mon parcours</button>
+      <button id="nav-paths" class="nav-link" hidden>Parcours guidés</button>
+      <button id="nav-tcf" class="nav-link">TCF B2</button>
+      <button id="nav-course" class="nav-link" hidden>Les temps</button>
+      <button id="nav-writing" class="nav-link" hidden>Écrire</button>
+      <button id="nav-notebook" class="nav-link"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="3" width="15" height="18" rx="2"/><path d="M9 3v18M3 7h4M3 12h4M3 17h4M13 8h3M13 12h3"/></svg>Mon carnet</button>
+      <button id="nav-progress" class="nav-link" hidden>Progression</button>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Activer le mode sombre" aria-pressed="false">☾ <span>Mode sombre</span></button>
+    <button id="navigation-toggle" class="navigation-toggle" aria-controls="navigation-links" aria-expanded="false" hidden><svg class="ui-icon menu-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg><svg class="ui-icon close-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"/></svg><span id="navigation-toggle-label">Menu</span></button>
+  </header>
+  <nav id="location-bar" class="location-bar" aria-label="Vous êtes ici" hidden><button id="location-home">Accueil</button><span aria-hidden="true">›</span><button id="location-parent" hidden></button><span id="location-separator" aria-hidden="true" hidden>›</span><span id="location-current" aria-current="page"></span></nav>
+  <main>
+    <section id="home-page" class="page home-page" aria-labelledby="journey-heading">
+      <div class="journey-hero"><div class="journey-feature"><div class="journey-feature-top"><span class="eyebrow">VOTRE PROCHAIN DÉFI</span><span id="journey-next-label" class="journey-feature-chapter">Chapitre 1 · Les bases</span></div><div class="journey-feature-body"><span id="journey-current-number" class="journey-feature-number" aria-hidden="true">01</span><div><p id="journey-level-label" class="eyebrow">NIVEAU 1 / 24</p><h1 id="journey-heading" tabindex="-1">Parler d’aujourd’hui</h1><p id="journey-teach" class="journey-teach"></p><p id="journey-example" class="journey-example"></p><div id="journey-context" class="journey-context"></div><button id="journey-continue" class="primary" type="button">Commencer le niveau 1 →</button></div></div></div><div class="journey-progress-card"><span class="eyebrow">VOTRE PROGRESSION</span><div id="journey-progress-ring" class="journey-progress-ring" aria-hidden="true"><strong id="journey-count">0 / 24</strong></div><progress id="journey-progress" max="24" value="0" aria-label="Niveaux réussis"></progress><span>6 chapitres · 6 défis finaux</span></div></div>
+      <div class="journey-intro"><div><p class="eyebrow">LA CARTE COMPLÈTE</p><h2>24 niveaux. Un cap : le TCF.</h2></div><p>12 questions par niveau · un final à chaque étape</p></div>
+      <div id="journey-list" class="journey-list" aria-label="Niveaux du parcours"></div>
+      <div class="journey-destination"><span class="journey-destination-line" aria-hidden="true"></span><button id="journey-tcf-final" type="button" disabled><span class="journey-destination-icon" aria-hidden="true">⚑</span><span><strong>Épreuve blanche TCF</strong><small>80 questions · vrais livrets · audio hors connexion</small><em id="journey-tcf-status">Terminez le grand final pour débloquer ce test</em></span></button></div>
+      <div class="journey-tools"><p class="eyebrow">ALLER PLUS LOIN</p><h2>Vos outils</h2><div class="journey-tool-grid"><button id="journey-courses" type="button"><span aria-hidden="true">◷</span>Les temps</button><button id="journey-writing" type="button"><span aria-hidden="true">✎</span>Écrire</button><button id="journey-notebook" type="button"><span aria-hidden="true">▤</span>Mon carnet</button><button id="journey-stats" type="button"><span aria-hidden="true">↗</span>Progression</button><button id="journey-tcf" type="button"><span aria-hidden="true">◉</span>TCF B2</button></div></div>
+      <details id="free-practice" class="legacy-library"><summary>Explorer librement les autres exercices et parcours</summary><div class="legacy-home">
+      <div class="home-heading"><p class="eyebrow">PRATIQUE LIBRE</p><h2 id="home-title">Le français,<br>avec intention.</h2><p class="intro">Choisissez un petit défi. Recevez une explication utile.<br>Revenez quand vous voulez.</p><button id="resume-work" class="resume-work" hidden></button><button id="home-tcf" class="tcf-home-link">Cap sur le TCF France · niveau B2 <span aria-hidden="true">↗</span><small>Comprendre, argumenter, progresser.</small></button><button id="home-course" class="text-button course-invitation">Explorer les temps et leurs nuances →</button></div>
+      <aside class="start-card" aria-labelledby="session-title"><div class="session-card-heading"><span class="pill">SÉANCE RAPIDE</span><h2 id="session-title">Dix questions.<br>Une idée plus nette.</h2><p>Grammaire, conjugaison et vocabulaire : une question à la fois, avec la règle au bon moment.</p></div><div class="session-facts" aria-label="Ce que comprend la séance"><span><strong>10</strong> questions</span><span><strong>4</strong> choix à chaque fois</span><span><strong>0</strong> chronomètre</span></div><button id="resume-session" class="primary" hidden>Reprendre ma séance →</button><button id="start-mixed" class="primary">Lancer ma séance <span aria-hidden="true">→</span></button><span class="small-note">Intermédiaire à avancé · vos erreurs restent dans votre carnet</span></aside>
+      <div class="topic-section"><div class="section-heading"><div><p class="eyebrow">CHOISIR SON ANGLE</p><h2>Travailler une compétence précise</h2></div><div class="section-heading-actions"><span id="library-count"></span><button id="home-paths" class="text-button">Voir les parcours guidés →</button></div></div><div class="topic-grid">
+        <button id="start-grammar" class="topic-card"><span class="topic-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" focusable="false"><path d="m3 16 5-12 5 12M5 12h6m4 6 2 2 4-5"/></svg></span><strong>Grammaire</strong><span>Accords, pronoms et phrases justes.</span><span class="topic-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" focusable="false"><path d="M5 19 19 5M7 5h12v12"/></svg></span></button>
+        <button id="start-tense" class="topic-card"><span class="topic-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" focusable="false"><path d="M20 9a8 8 0 0 0-14-3L3 9m0-6v6h6M4 15a8 8 0 0 0 14 3l3-3m0 6v-6h-6"/></svg></span><strong>Conjugaison</strong><span>Les temps et les verbes qui résistent.</span><span class="topic-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" focusable="false"><path d="M5 19 19 5M7 5h12v12"/></svg></span></button>
+        <button id="start-words" class="topic-card"><span class="topic-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" focusable="false"><path d="M12 5C9 3 6 3 3 4v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1Zm0 0v15"/></svg></span><strong>Vocabulaire</strong><span>Le mot précis. La nuance juste.</span><span class="topic-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" focusable="false"><path d="M5 19 19 5M7 5h12v12"/></svg></span></button>
+      </div></div></div></details>
+    </section>
+
+    <section id="levels-page" class="page levels-page" aria-labelledby="levels-title" hidden>
+      <button id="levels-back" class="text-button" type="button">← Choisir une autre section</button>
+      <div class="levels-heading"><p class="eyebrow">APPRENDRE · PRATIQUER · MAÎTRISER</p><h1 id="levels-title" tabindex="-1"></h1><p id="levels-description" class="intro"></p><div class="levels-progress-wrap"><span id="levels-progress">0 / 4 étapes</span><progress id="levels-progress-bar" max="4" value="0" aria-label="Étapes réussies"></progress></div></div>
+      <div id="levels-list" class="levels-list"></div>
+      <p class="small-note levels-footnote">Une erreur n’efface jamais un niveau réussi. Vous pouvez rejouer chaque étape pour consolider vos acquis.</p>
+    </section>
+
+    <section id="tcf-page" class="page tcf-page" aria-label="Parcours TCF objectif B2" hidden>
+      <div id="tcf-hero" class="tcf-hero"><div><p class="eyebrow">VOTRE PARCOURS TCF · OBJECTIF B2</p><h1 id="tcf-title" tabindex="-1">Comprendre finement.<br>Répondre avec nuance.</h1><p class="intro">Des mini-défis concrets, une explication après chaque réponse et vos erreurs à rejouer. Avancez à votre rythme.</p><button id="tcf-quick" class="primary">Lancer un défi de 4 questions →</button></div><div class="tcf-hero-mark" aria-hidden="true"><span>B2</span><small>Lire · écouter · argumenter</small></div></div>
+      <div id="tcf-dashboard" class="tcf-dashboard"><div><span class="eyebrow">QUESTIONS TRAVAILLÉES</span><strong id="tcf-solved">0 / 12</strong></div><div><span class="eyebrow">À REJOUER</span><strong id="tcf-review-count">0</strong></div><button id="tcf-review" class="text-button" hidden>Rejouer mes erreurs →</button><p id="tcf-no-review" class="small-note">Vos erreurs reviendront ici pour une vraie révision.</p></div>
+      <div id="tcf-overview">
+        <p id="tcf-message" class="tcf-message" role="status" hidden></p>
+        <section id="tcf-offline-exam" class="tcf-offline-exam" aria-labelledby="tcf-exam-title" hidden>
+          <button id="tcf-exam-back" class="text-button" type="button">← Retour au parcours</button>
+          <div class="tcf-exam-heading"><div><p class="eyebrow">SESSION LOCALE · 2 × 40 QUESTIONS</p><h2 id="tcf-exam-title" tabindex="-1">90 minutes pour vous tester.</h2><p class="small-note">Lisez chaque livret, écoutez son MP3 et cochez vos réponses. Votre travail est conservé sur cet appareil.</p></div><div class="tcf-exam-clock"><span>TEMPS RESTANT</span><strong id="tcf-exam-time" role="timer">90:00</strong><small id="tcf-exam-progress">0 / 80 réponses</small></div></div>
+          <details class="tcf-exam-setup"><summary>Choisir d’autres livrets</summary><div><label for="tcf-exam-first">Premier livret <select id="tcf-exam-first"></select></label><label for="tcf-exam-second">Deuxième livret <select id="tcf-exam-second"></select></label><button id="tcf-exam-new" class="text-button" type="button">Démarrer une nouvelle session</button></div></details>
+          <p id="tcf-exam-notice" class="small-note" role="status"></p>
+          <div class="tcf-exam-mobile-switch" role="group" aria-label="Affichage du test"><button id="tcf-exam-view-document" type="button" aria-pressed="true">Livret et audio</button><button id="tcf-exam-view-answer" type="button" aria-pressed="false">Ma réponse</button></div>
+          <div id="tcf-exam-workspace" class="tcf-exam-workspace" data-view="document"><div id="tcf-exam-materials" class="tcf-exam-materials"></div><div class="tcf-exam-response"><p class="eyebrow">FEUILLE DE RÉPONSES</p><h3 id="tcf-exam-question-number" tabindex="-1">Question 1 / 80</h3><p id="tcf-exam-set-label" class="small-note"></p><div id="tcf-exam-answers" class="tcf-exam-answers"></div><div class="tcf-exam-step"><button id="tcf-exam-previous" class="text-button" type="button">← Précédente</button><button id="tcf-exam-next" class="primary" type="button">Suivante →</button></div><details id="tcf-exam-jump" class="tcf-exam-jump"><summary>Voir toutes les questions</summary><div id="tcf-exam-jump-list"></div></details></div></div>
+          <div class="tcf-exam-actions"><button id="tcf-exam-finish" class="primary" type="button">Terminer et voir mes réponses →</button><p class="small-note">Pas de score officiel : comparez avec les grilles de correction à la fin de chaque PDF.</p></div>
+          <p id="tcf-exam-result" class="tcf-exam-result" role="status" hidden></p>
+        </section>
+        <section class="tcf-real" aria-labelledby="tcf-real-title">
+          <div class="section-heading"><div><p class="eyebrow">SUJETS PUBLIÉS · VOIX ENREGISTRÉES</p><h2 id="tcf-real-title">S’entraîner sur de vrais supports TCF</h2></div><span class="small-note">Livret, audio et simulation locale sans connexion</span></div>
+          <div class="tcf-real-grid">
+            <button id="tcf-real-exam" type="button" class="tcf-real-card"><span>HORS CONNEXION · 80 QUESTIONS</span><strong>Test de 90 minutes</strong><small>Deux livrets TV5MONDE, leurs vrais enregistrements et une feuille de réponses chronométrée.</small><b>Commencer ici →</b></button>
+            <a id="tcf-real-audio" href="https://apprendre.tv5monde.com/fr/tcf/test-dentrainement-au-tcf?competence=CO&amp;tcf_lot_id=58" target="_blank" rel="noopener noreferrer" class="tcf-real-card"><span>TV5MONDE · COMPRÉHENSION ORALE</span><strong>Écouter de vraies voix</strong><small>Une série de questions avec audio enregistré.</small><b>Commencer l’écoute ↗</b></a>
+            <a id="tcf-real-series" href="https://apprendre.tv5monde.com/fr/tcf" target="_blank" rel="noopener noreferrer" class="tcf-real-card"><span>TV5MONDE · ENTRAÎNEMENT</span><strong>Choisir parmi 17 séries</strong><small>Oral, langue et écrit, à votre rythme.</small><b>Voir les séries ↗</b></a>
+            <a id="tcf-official-samples" href="https://www.france-education-international.fr/test/exemples-epreuves-tcf" target="_blank" rel="noopener noreferrer" class="tcf-real-card"><span>FRANCE ÉDUCATION INTERNATIONAL</span><strong>Exemples officiels</strong><small>Consignes, questions et sujets d’expression, dont le TCF IRN.</small><b>Voir les exemples ↗</b></a>
+          </div>
+          <details id="tcf-library" class="tcf-library">
+            <summary>Les 17 séries TV5MONDE · disponibles hors connexion <span>Afficher les séries ↓</span></summary>
+            <p class="small-note">Chaque livret contient les questions et les corrigés. Écoutez le MP3 correspondant pour la compréhension orale. Ces copies originales sont enregistrées sur cet ordinateur.</p>
+            <ol class="tcf-library-list">
+            <li data-tcf-set="1"><strong>Série 01</strong><span>40 questions · corrigé · voix enregistrées</span><a href="tcf-offline/tcf1_2.pdf" target="_blank" rel="noopener noreferrer">Livret PDF ↗</a><a href="tcf-offline/tcf1-podcast.mp3" target="_blank" rel="noopener noreferrer">Audio MP3 ↗</a></li>
+            <li data-tcf-set="2"><strong>Série 02</strong><span>40 questions · corrigé · voix enregistrées</span><a href="tcf-offline/tcf2.pdf" target="_blank" rel="noopener noreferrer">Livret PDF ↗</a><a href="tcf-offline/tcf2-podcast.mp3" target="_blank" rel="noopener noreferrer">Audio MP3 ↗</a></li>
+            <li data-tcf-set="3"><strong>Série 03</strong><span>40 questions · corrigé · voix enregistrées</span><a href="tcf-offline/tcf3.pdf" target="_blank" rel="noopener noreferrer">Livret PDF ↗</a><a href="tcf-offline/tcf3-podcast.mp3" target="_blank" rel="noopener noreferrer">Audio MP3 ↗</a></li>
+            <li data-tcf-set="4"><strong>Série 04</strong><span>40 questions · corrigé · voix enregistrées</span><a href="tcf-offline/tcf4.pdf" target="_blank" rel="noopener noreferrer">Livret PDF ↗</a><a href="tcf-offline/tcf4-podcast.mp3" target="_blank" rel="noopener noreferrer">Audio MP3 ↗</a></li>
+            <li data-tcf-set="5"><strong>Série 05</strong><span>40 questions · corrigé · voix enregistrées</span><a href="tcf-offline/tcf5.pdf" target="_blank" rel="noopener noreferrer">Livret PDF ↗</a><a href="tcf-offline/tcf5-podcast.mp3" target="_blank" rel="noopener noreferrer">Audio MP3 ↗</a></li>
+            <li data-tcf-set="6"><strong>Série 06</strong><span>40 questions · corrigé · voix enregistrées</span><a href="tcf-offline/tcf6-livret-complet.pdf" target="_blank" rel="noopener noreferrer">Livret PDF ↗</a><a href="tcf-offline/tcf6-podcast.mp3" target="_blank" rel="noopener noreferrer">Audio MP3 ↗</a></li>
+            <li data-tcf-set="7"><strong>Série 07</strong><span>40 questions · corrigé · voix enregistrées</span><a href="tcf-offline/tcf7-livret-complet.pdf" target="_blank" rel="noopener noreferrer">Livret PDF ↗</a><a href="tcf-offline/tcf7-podcast.mp3" target="_blank" rel="noopener noreferrer">Audio MP3 ↗</a></li>
+            <li data-tcf-set="8"><strong>Série 08</strong><span>40 questions · corrigé · voix enregistrées</span><a href="tcf-offline/tcf8-livret-complet.pdf" target="_blank" rel="noopener noreferrer">Livret PDF ↗</a><a href="tcf-offline/tcf8-podcast.mp3" target="_blank" rel="noopener noreferrer">Audio MP3 ↗</a></li>
+            <li data-tcf-set="9"><strong>Série 09</strong><span>40 questions · corrigé · voix enregistrées</span><a href="tcf-offline/tcf9-livret-complet.pdf" target="_blank" rel="noopener noreferrer">Livret PDF ↗</a><a href="tcf-offline/tcf9-podcast.mp3" target="_blank" rel="noopener noreferrer">Audio MP3 ↗</a></li>
+            <li data-tcf-set="10"><strong>Série 10</strong><span>40 questions · corrigé · voix enregistrées</span><a href="tcf-offline/tcf10-livret-complet.pdf" target="_blank" rel="noopener noreferrer">Livret PDF ↗</a><a href="tcf-offline/tcf10-podcast.mp3" target="_blank" rel="noopener noreferrer">Audio MP3 ↗</a></li>
+            <li data-tcf-set="11"><strong>Série 11</strong><span>40 questions · corrigé · voix enregistrées</span><a href="tcf-offline/tcf11-livret-complet.pdf" target="_blank" rel="noopener noreferrer">Livret PDF ↗</a><a href="tcf-offline/tcf11-podcast.mp3" target="_blank" rel="noopener noreferrer">Audio MP3 ↗</a></li>
+            <li data-tcf-set="12"><strong>Série 12</strong><span>40 questions · corrigé · voix enregistrées</span><a href="tcf-offline/tcf12-livret-complet.pdf" target="_blank" rel="noopener noreferrer">Livret PDF ↗</a><a href="tcf-offline/tcf12-podcast.mp3" target="_blank" rel="noopener noreferrer">Audio MP3 ↗</a></li>
+            <li data-tcf-set="13"><strong>Série 13</strong><span>40 questions · corrigé · voix enregistrées</span><a href="tcf-offline/tcf13-livret-complet_0.pdf" target="_blank" rel="noopener noreferrer">Livret PDF ↗</a><a href="tcf-offline/tcf13-podcast.mp3" target="_blank" rel="noopener noreferrer">Audio MP3 ↗</a></li>
+            <li data-tcf-set="14"><strong>Série 14</strong><span>40 questions · corrigé · voix enregistrées</span><a href="tcf-offline/tcf14-livret-complet.pdf" target="_blank" rel="noopener noreferrer">Livret PDF ↗</a><a href="tcf-offline/tcf14-podcast.mp3" target="_blank" rel="noopener noreferrer">Audio MP3 ↗</a></li>
+            <li data-tcf-set="15"><strong>Série 15</strong><span>40 questions · corrigé · voix enregistrées</span><a href="tcf-offline/tcf15-livret-complet.pdf" target="_blank" rel="noopener noreferrer">Livret PDF ↗</a><a href="tcf-offline/tcf15-podcast.mp3" target="_blank" rel="noopener noreferrer">Audio MP3 ↗</a></li>
+            <li data-tcf-set="16"><strong>Série 16</strong><span>40 questions · corrigé · voix enregistrées</span><a href="tcf-offline/tcf16-livret-complet.pdf" target="_blank" rel="noopener noreferrer">Livret PDF ↗</a><a href="tcf-offline/tcf16-podcast.mp3" target="_blank" rel="noopener noreferrer">Audio MP3 ↗</a></li>
+            <li data-tcf-set="17"><strong>Série 17</strong><span>40 questions · corrigé · voix enregistrées</span><a href="tcf-offline/tcf17-livret-complet.pdf" target="_blank" rel="noopener noreferrer">Livret PDF ↗</a><a href="tcf-offline/tcf17-podcast.mp3" target="_blank" rel="noopener noreferrer">Audio MP3 ↗</a></li>
+            </ol>
+            <p class="small-note">Source : <a href="https://apprendre.tv5monde.com/fr/article/les-livrets-dentrainement-au-tcf-r-avec-tv5monde" target="_blank" rel="noopener noreferrer">livrets d’entraînement TV5MONDE ↗</a></p>
+          </details>
+          <p class="small-note tcf-real-note">Les 17 livrets et MP3 fonctionnent hors connexion. Le test local combine deux séries publiées ; il ne reproduit pas le tirage aléatoire ni la notation du simulateur TV5MONDE. Les autres liens restent en ligne.</p>
+        </section>
+        <div class="section-heading"><div><p class="eyebrow">CHOISIR UN DÉFI</p><h2>Trois réflexes pour le B2</h2></div><span class="small-note">4 questions par compétence · retour immédiat</span></div><div class="tcf-module-grid"><button id="tcf-start-reading" class="tcf-module"><span class="tcf-module-number">01 / LIRE</span><strong>Lire entre les lignes</strong><span>Repérez l’idée centrale, les réserves et l’implicite.</span><span class="tcf-module-arrow">Commencer ↗</span></button><button id="tcf-start-listening" class="tcf-module"><span class="tcf-module-number">02 / ÉCOUTER</span><strong>Écouter l’intention</strong><span>Attrapez le changement, le contraste et la demande.</span><span class="tcf-module-arrow">Commencer ↗</span></button><button id="tcf-start-structures" class="tcf-module"><span class="tcf-module-number">03 / LANGUE</span><strong>Choisir la nuance juste</strong><span>Concession, hypothèse, subjonctif et logique.</span><span class="tcf-module-arrow">Commencer ↗</span></button></div><div class="tcf-production"><div><p class="eyebrow">PASSER À LA PRODUCTION</p><h2>Une idée, deux façons de la défendre.</h2><p>Entraînez aussi l’expression écrite et orale : construire une position, donner un exemple, accueillir une objection.</p></div><button id="tcf-start-production" class="primary">Ouvrir l’atelier B2 →</button></div><p class="small-note tcf-disclaimer">Entraînement original hors connexion. Ce parcours n’est ni une épreuve officielle ni une estimation de votre niveau.</p>
+      </div>
+      <div id="tcf-exercise" class="tcf-exercise" hidden><button id="tcf-back" class="text-button">← Tous les défis</button><div class="tcf-exercise-head"><span id="tcf-kind" class="eyebrow"></span><span id="tcf-position" class="pill"></span></div><progress id="tcf-progress" max="4" value="0" aria-label="Progression dans le défi"></progress><div class="tcf-question-layout"><div class="tcf-stimulus"><p class="eyebrow">LE CONTEXTE</p><h2 id="tcf-card-title"></h2><p id="tcf-context"></p><div id="tcf-listening-tools" hidden><button id="tcf-play" class="tcf-play">▶ Écouter le message</button><details id="tcf-transcript"><summary>Lire la transcription</summary><p id="tcf-transcript-text"></p></details><p class="small-note">Voix de synthèse de votre appareil ; entraînement, pas enregistrement officiel.</p></div></div><div class="tcf-question"><p class="eyebrow">À VOUS DE JOUER</p><h2 id="tcf-prompt" tabindex="-1"></h2><div id="tcf-options" class="tcf-options"></div><div id="tcf-feedback" class="tcf-feedback" role="status" hidden></div><button id="tcf-next" class="primary" hidden>Question suivante →</button></div></div></div>
+      <div id="tcf-production" class="tcf-production-workspace" hidden><button id="tcf-production-back" class="text-button">← Tous les défis</button><p class="eyebrow">ATELIER D’EXPRESSION · B2</p><h2 id="tcf-production-title" tabindex="-1">Faut-il limiter la voiture en centre-ville ?</h2><p>Vous participez à une consultation locale. Défendez une position nuancée : votre avis, deux raisons, un exemple concret et une réponse à une objection.</p><div class="tcf-production-grid"><div><label for="tcf-draft">Votre brouillon ou vos notes pour l’oral</label><textarea id="tcf-draft" rows="12" maxlength="10000" lang="fr" spellcheck="true" placeholder="À mon avis… D’une part… Cependant…"></textarea><p id="tcf-word-count" class="small-note">0 mot · brouillon enregistré sur cet appareil</p></div><aside><h3>La méthode en 4 mouvements</h3><ol><li>Annoncez votre position clairement.</li><li>Donnez deux arguments différents.</li><li>Illustrez par une situation précise.</li><li>Reconnaissez une limite, puis concluez.</li></ol><details><summary>Voir une réponse possible</summary><p>Limiter la voiture en centre-ville me paraît utile pour réduire le bruit et rendre les rues plus agréables. Par exemple, des espaces libérés pourraient accueillir des pistes cyclables et des terrasses. Cependant, une interdiction immédiate pénaliserait les personnes qui viennent de loin. Il faudrait donc améliorer les transports publics avant de réduire progressivement la circulation.</p><p class="small-note">Comparez la structure avec la vôtre. Ne cherchez pas à mémoriser ce texte.</p></details></aside></div><div class="tcf-self-check"><h3>Avant de terminer, vérifiez votre argumentation</h3><label><input type="checkbox"> Ma position est claire dès le début.</label><label><input type="checkbox"> J’ai donné un exemple précis.</label><label><input type="checkbox"> J’ai répondu à une objection avec nuance.</label><p class="small-note">Pour l’oral, entraînez-vous à dire votre réponse à voix haute en 1 à 2 minutes. L’application ne note pas votre production.</p></div></div>
+    </section>
+
+    <section id="paths-page" class="page paths-page" aria-labelledby="paths-title" hidden>
+      <button id="paths-back" class="text-button">← Accueil</button>
+      <div class="page-heading"><p class="eyebrow">DE LA RÈGLE À VOTRE TEXTE</p><h1 id="paths-title" tabindex="-1">Apprendre pour<br>faire quelque chose.</h1><p class="intro">Choisissez votre intention. Une suite de petites étapes vous mène jusqu’à un texte qui vous ressemble.</p></div>
+      <div id="paths-list"></div>
+      <p class="small-note">Les scores indiquent vos derniers essais, pas une maîtrise certifiée. Chaque étape reste accessible librement.</p>
+    </section>
+
+    <section id="course-page" class="page course-page" aria-labelledby="course-title" hidden>
+      <div class="page-heading"><p class="eyebrow">LE VOYAGE DES TEMPS</p><h1 id="course-title" tabindex="-1">Changez de temps.<br>Changez de point de vue.</h1><p class="intro">Une scène, une construction, une nuance.<br>Apprenez à choisir un temps avant de le conjuguer.</p></div>
+      <p class="course-guidance">Commencez par les essentiels. Les formes littéraires servent surtout à lire : vous n’avez pas besoin de les employer dans une conversation.</p>
+      <button id="course-paths" class="text-button">Relier ces leçons à un projet d’écriture →</button>
+      <div id="course-library"></div>
+    </section>
+    <section id="lesson-page" class="page lesson-page" aria-labelledby="lesson-title" hidden>
+      <button id="lesson-back" class="text-button">← Tous les temps</button>
+      <div class="lesson-title-row"><div><p id="lesson-group" class="eyebrow"></p><h1 id="lesson-title" tabindex="-1"></h1></div><span id="lesson-position" class="pill"></span></div>
+      <div class="lesson-steps" role="group" aria-label="Étapes de la leçon"><button id="lesson-step-0">1 · Comprendre</button><button id="lesson-step-1">2 · Construire</button><button id="lesson-step-2">3 · Distinguer</button><button id="lesson-step-3">4 · Réemployer</button></div>
+      <div id="lesson-content" class="lesson-content" aria-live="polite"></div>
+      <div class="lesson-actions"><button id="lesson-previous" class="text-button">← Étape précédente</button><button id="lesson-next" class="primary">Construire ce temps →</button></div>
+    </section>
+
+    <section id="writing-page" class="page collection-page" aria-labelledby="writing-title" hidden>
+      <div class="page-heading"><p class="eyebrow">L’ATELIER D’ÉCRITURE</p><h1 id="writing-title" tabindex="-1">Vos idées.<br>Vos phrases.</h1><p class="intro">Préparez un plan, écrivez un premier jet, puis améliorez-le.<br>Le modèle vous aide à comparer, pas à copier.</p></div>
+      <div id="writing-library" class="course-grid"></div>
+    </section>
+    <section id="writer-page" class="page writer-page" aria-labelledby="writer-title" hidden>
+      <button id="writer-back" class="text-button">← Les ateliers · Brouillon conservé</button>
+      <div class="lesson-title-row"><div><p id="writer-genre" class="eyebrow"></p><h1 id="writer-title" tabindex="-1"></h1></div><span id="writer-target" class="pill"></span></div>
+      <details id="writer-brief-details" class="writer-brief" open><summary>La consigne</summary><p id="writer-brief"></p></details>
+      <div class="lesson-steps" role="group" aria-label="Étapes d’écriture"><button id="writing-step-0">1 · Préparer</button><button id="writing-step-1">2 · Rédiger</button><button id="writing-step-2">3 · Améliorer</button></div>
+      <div id="writing-plan" class="writing-plan"><h2 id="writer-goal"></h2><label id="plan-label-0" for="plan-0"></label><textarea id="plan-0" rows="2" maxlength="3000"></textarea><label id="plan-label-1" for="plan-1"></label><textarea id="plan-1" rows="2" maxlength="3000"></textarea><label id="plan-label-2" for="plan-2"></label><textarea id="plan-2" rows="2" maxlength="3000"></textarea></div>
+      <div id="writing-workspace" class="writing-workspace" hidden>
+        <div class="writing-paper"><label for="writing-text" id="writing-text-label">Votre premier jet</label><textarea id="writing-text" rows="15" maxlength="16000" lang="fr" spellcheck="true" placeholder="Écrivez ici, avec vos propres mots…"></textarea><div class="writing-meta"><span id="writing-count"></span></div></div>
+        <aside><div id="writing-support"><h2>Pour vous lancer</h2><p>Choisissez les expressions utiles à votre intention. Vous n’avez pas besoin de toutes les employer.</p><ul id="writing-expressions"></ul><details><summary>Revoir mon plan</summary><div id="writing-plan-preview"></div></details></div>
+          <div id="writing-revision" hidden><h2>Relisez avec une intention</h2><p>Une relecture pour les idées, une pour l’organisation, une pour la langue.</p><div id="writing-checks"></div><div id="writing-signals" class="writing-signals" aria-live="polite"></div><p class="small-note">Repères de longueur et de structure, pas une correction grammaticale ni une note de niveau.</p></div>
+        </aside>
+      </div>
+      <div id="writing-comparison" hidden><details id="writing-original-details"><summary>Mon premier jet, avant révision</summary><p id="writing-original" class="preserve-lines"></p></details><details id="writing-model-details"><summary>Comparer avec un exemple commenté</summary><p class="small-note">Une possibilité parmi d’autres. Comparez les choix d’organisation et de langue, puis améliorez votre propre texte.</p><div id="writing-model"></div></details></div>
+      <p id="writing-save" class="writing-meta" role="status"></p>
+      <div class="lesson-actions"><button id="writer-previous" class="text-button">← Étape précédente</button><button id="writer-next" class="primary">Passer au premier jet →</button></div>
+    </section>
+
+    <section id="practice-page" class="practice-page" aria-labelledby="prompt" hidden>
+      <header class="practice-header"><button id="leave-practice" class="text-button">← Pause</button><span id="practice-topic"></span><span id="question-number"></span></header>
+      <progress id="session-progress" max="10" value="0" aria-label="Questions terminées"></progress>
+      <div class="focus-card">
+        <div class="question-area"><span id="level" class="eyebrow"></span><h1 id="prompt" tabindex="-1"></h1><p class="question-hint">Choisissez la bonne réponse.</p><div id="choices" class="choices" aria-label="Quatre réponses possibles"></div></div>
+        <div id="answer-area" class="answer-area" hidden><div id="feedback" role="status"></div><button id="next" class="primary">Continuer →</button></div>
+      </div>
+      <p class="keyboard-hint"><kbd>1</kbd>–<kbd>4</kbd> pour répondre <span>·</span> <kbd>Entrée</kbd> pour continuer</p>
+    </section>
+
+    <section id="notebook-page" class="page collection-page" aria-labelledby="notebook-title" hidden>
+      <div class="page-heading"><p class="eyebrow">COMPRENDRE, PUIS RETENIR</p><h1 id="notebook-title" tabindex="-1">Mon carnet.</h1><p class="intro" id="notebook-description"></p></div>
+      <button id="start-review" class="primary" hidden>Pratiquer mes erreurs →</button>
+      <div id="notebook-empty" class="empty-state"><span aria-hidden="true">✓</span><h2>Rien à revoir pour le moment.</h2><p>Vos erreurs apparaîtront ici avec la bonne réponse et sa règle.</p><button id="empty-start" class="text-button">Commencer une séance →</button></div>
+      <div id="notebook-list" class="notebook-list"></div>
+    </section>
+
+    <section id="progress-page" class="page collection-page" aria-labelledby="progress-title" hidden>
+      <div class="page-heading"><p class="eyebrow">VOS PETITS PAS COMPTENT</p><h1 id="progress-title" tabindex="-1">Votre progression.</h1><p class="intro">Un aperçu de votre pratique, sans pression.</p></div>
+      <dl class="stats-grid"><div><dt>Réponses données</dt><dd id="total-answered">0</dd></div><div><dt>Réponses justes</dt><dd id="accuracy">—</dd></div><div><dt>Bonnes réponses de suite</dt><dd id="streak">0</dd></div><div><dt>Erreurs à revoir</dt><dd id="review-count">0</dd></div></dl>
+      <p class="progress-note">Ces chiffres décrivent vos réponses, pas votre niveau de français. Votre progression est conservée dans ce navigateur.</p>
+      <details class="settings"><summary>Gérer ma progression</summary><p>Cette action efface vos statistiques et votre carnet sur cet appareil.</p><button id="reset" class="danger-button">Réinitialiser la progression</button></details>
+    </section>
+
+    <section id="results-page" class="page results-page" aria-labelledby="results-title" hidden>
+      <p class="eyebrow">SÉANCE TERMINÉE</p><div id="result-score" class="result-score"></div><h1 id="results-title" tabindex="-1">Un pas de plus.</h1><p id="result-message" class="intro"></p>
+      <div class="result-actions"><button id="result-repeat" class="primary">Une nouvelle séance →</button><button id="result-level-next" class="text-button" hidden>Voir mes niveaux →</button><button id="result-home" class="text-button">Retour à l’accueil</button></div>
+      <button id="result-lesson" class="text-button" hidden>Relire la leçon →</button>
+      <button id="result-path" class="text-button" hidden>Continuer mon parcours →</button>
+      <details id="result-details" class="result-details"><summary>Relire mes réponses</summary><div id="result-list"></div></details>
+    </section>
+  </main>
+  <p id="storage-notice" class="storage-notice" role="status" hidden></p>
+  <script src="quiz-engine.js"></script><script src="questions.js"></script><script src="lessons.js"></script><script src="advanced-lessons.js"></script><script src="situations.js"></script><script src="tense-course.js"></script><script src="reading-situations.js"></script><script src="journey-extra.js"></script><script src="tense-transfer.js"></script><script src="writing-data.js"></script><script src="tcf-data.js"></script><script src="app.js"></script><script src="learning-paths.js"></script><script src="course-ui.js"></script><script src="writing-ui.js"></script><script src="tcf-ui.js"></script><script src="levels-ui.js"></script><script src="journey-ui.js"></script><script src="theme.js"></script>
+</body>
+</html>
